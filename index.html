@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Profesional | Amin Fa</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2962ff;
+      --primary-dark: #0039cb;
+      --secondary: #00c853;
+      --secondary-dark: #009624;
+      --accent: #ff4081;
+      --light: #f5f7ff;
+      --dark: #1a237e;
+      --text: #333;
+      --text-light: #666;
+      --white: #ffffff;
+      --gray: #e0e0e0;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+      background-size: cover;
+      background-attachment: fixed;
+      overflow-x: hidden;
+      min-height: 100vh;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .overlay {
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+      background: rgba(26, 35, 126, 0.85);
+    }
+
+    #menu.overlay {
+      overflow-y: auto;
+    }
+
+    /* Main Container */
+    .main-container {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin: 20px auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Profile Section */
+    .profile-section {
+      text-align: center;
+      margin-bottom: 30px;
+      padding-top: 20px;
+      position: relative;
+    }
+
+    .profile-picture {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--white);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      margin-bottom: 20px;
+      transition: var(--transition);
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+    .profile-picture:hover {
+      transform: scale(1.05);
+    }
+
+    .profile-name {
+      font-size: 2.2rem;
+      color: var(--dark);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile-name::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      margin: 10px auto;
+      border-radius: 3px;
+    }
+
+    .profile-title {
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    /* Main Action Buttons (Facebook, Instagram, My Note) */
+    .button-container {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 16px 30px;
+      margin: 0;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      width: 100%;
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 4px 12px rgba(41, 98, 255, 0.25);
+      transition: var(--transition);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn i {
+      font-size: 1.2rem;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: var(--primary-dark);
+      transition: width 0.5s ease;
+      z-index: -1;
+    }
+
+    .btn:hover::before {
+      width: 100%;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(41, 98, 255, 0.35);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    /* Interactive Icon Buttons (under "Welcome" text) */
+    .icon-button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* Space between icons */
+      margin-top: 15px;
+      /* Adjust margin to position below "Welcome" text */
+      margin-bottom: 30px;
+      /* Space before quotes section */
+    }
+
+    .icon-btn {
+      width: 60px;
+      /* Size of the circular button */
+      height: 60px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      /* Blue background */
+      color: var(--white);
+      /* White icon */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.2rem;
+      /* Icon size */
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .icon-btn:hover {
+      background-color: var(--primary-dark);
+      /* Darker blue on hover */
+      transform: translateY(-5px);
+      /* Move up slightly on hover */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .icon-btn:active {
+      transform: translateY(0px);
+      /* Reset position on click */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Quotes Section */
+    #quotesSection {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      color: var(--white);
+      padding: 25px;
+      margin: 30px auto;
+      border-radius: 15px;
+      font-style: italic;
+      font-size: 1.1rem;
+      text-align: center;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #quotesSection::before {
+      content: """;
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      font-size: 8rem;
+      color: rgba(255, 255, 255, 0.15);
+      font-family: serif;
+      line-height: 1;
+    }
+
+    #quotesSection::after {
+      content: """;
+      position: absolute;
+      bottom: -50px;
+      right: 20px;
+      font-size: 8rem;
+      color: rgba(255, 255, 255, 0.15);
+      font-family: serif;
+      line-height: 1;
+      transform: rotate(180deg);
+    }
+
+    /* Info Frames */
+    .info-frame {
+      position: relative;
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      z-index: 50;
+      transition: var(--transition);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--primary-dark);
+      text-align: center;
+      margin: 15px auto;
+      width: 100%;
+      max-width: 700px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--accent);
+    }
+
+    .digital-time {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Slide Styles */
+    .slide {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--white);
+      padding: 30px;
+      display: none;
+      flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateX(100%);
+      overflow-y: auto;
+      z-index: 1000;
+    }
+
+    .slide.active {
+      display: flex;
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--gray);
+    }
+
+    .slide-title {
+      color: var(--dark);
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .slide-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-light);
+      cursor: pointer;
+      transition: var(--transition);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide-close:hover {
+      background: var(--light);
+      color: var(--primary);
+    }
+
+    /* Info Content */
+    .info-content {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 10px 5px;
+    }
+
+    .section-title {
+      color: var(--primary);
+      margin: 25px 0 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--secondary);
+      font-size: 1.4rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .info-text {
+      margin-bottom: 20px;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .tutorial-section {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .tutorial-section h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    .info-list {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+
+    .info-list li {
+      margin-bottom: 12px;
+      padding-left: 15px;
+      position: relative;
+      color: var(--text);
+    }
+
+    .info-list li::before {
+      content: '•';
+      color: var(--accent);
+      font-size: 1.2rem;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    .info-list li strong {
+      color: var(--primary-dark);
+    }
+
+    /* Footer */
+    .copyright-info {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.85rem;
+      padding: 20px 0 10px;
+      margin-top: 20px;
+      border-top: 1px solid var(--gray);
+    }
+
+    /* Burger Menu Button */
+    .burger-btn {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+      z-index: 100;
+      border: 2px solid var(--white);
+    }
+
+    .burger-btn:hover {
+      transform: scale(1.05);
+      background: var(--primary-dark);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .burger-icon {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: var(--white);
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .burger-icon::before,
+    .burger-icon::after {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: var(--white);
+      position: absolute;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .burger-icon::before {
+      top: -8px;
+    }
+
+    .burger-icon::after {
+      bottom: -8px;
+    }
+
+    /* Toast Notification */
+    #toast-container {
+      position: fixed;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      max-width: 95%;
+    }
+
+    .toast-wrapper {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 18px;
+      max-width: 380px;
+      min-width: 300px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-30px);
+      transition: all 0.3s ease-out;
+      border-left: 4px solid var(--primary);
+    }
+
+    .toast-wrapper.entering {
+      animation: slideDownEntry 0.4s forwards;
+    }
+
+    @keyframes slideDownEntry {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .toast-content strong {
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 5px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .toast-content span {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      display: block;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    /* Kucing dan Robot - Tanpa Animasi Mengambang, Sejajar Vertikal */
+    #catSticker,
+    .floating-btn {
+      position: fixed;
+      right: 25px; /* Jarak dari kanan */
+      z-index: 999; /* Pastikan di atas elemen lain */
+      transition: transform 0.2s ease-out; /* Tetap ada transisi hover */
+      -webkit-user-select: none; /* Mencegah seleksi teks */
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    #catSticker {
+      bottom: 85px; /* Di atas robot - disesuaikan lebih turun */
+      font-size: 3.2rem; /* Ukuran emoji kucing */
+      cursor: pointer;
+    }
+
+    .floating-btn {
+      bottom: 25px; /* Jarak dari bawah */
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #00c9a7, #0099ff);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 1000; /* Higher than cat sticker */
+    }
+
+    #catSticker:hover,
+    .floating-btn:hover {
+      transform: translateY(-5px) scale(1.1);
+    }
+    #catSticker:active,
+    .floating-btn:active {
+      transform: translateY(0) scale(0.9);
+    }
+
+    .floating-btn img {
+      width: 45px;
+      height: 45px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+
+
+    /* Emoji Rain Container */
+    #emojiRainContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      pointer-events: none;
+      /* Penting agar tidak menghalangi interaksi lain */
+      z-index: 998;
+      /* Di bawah stiker kucing, di atas konten utama */
+    }
+
+    .emoji-item {
+      position: absolute;
+      top: -50px; /* Mulai dari atas layar */
+      font-size: 2.5rem;
+      /* Ukuran emoji hujan */
+      animation: fall ease-in forwards;
+      opacity: 0;
+      /* Awalnya tidak terlihat */
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) translateX(0) scale(0.8);
+        opacity: 0;
+      }
+      5% { /* Appear quickly */
+        opacity: 1;
+      }
+      90% { /* Stay opaque for most of the fall */
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(105vh) translateX(var(--fall-x-offset)) scale(1.2);
+        /* Jatuh ke bawah layar */
+        opacity: 0;
+        /* Hilang di akhir */
+      }
+    }
+
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 20px 15px;
+        margin: 15px auto;
+        border-radius: 15px;
+      }
+      
+      .button-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .icon-button-container {
+        gap: 15px;
+      }
+
+      .icon-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+      }
+
+      .profile-name {
+        font-size: 1.8rem;
+      }
+      
+      .btn {
+        padding: 14px 20px;
+        font-size: 1rem;
+      }
+      
+      .slide {
+        padding: 20px 15px;
+      }
+      
+      .burger-btn {
+        width: 40px;
+        height: 40px;
+        top: 20px;
+        right: 20px;
+      }
+
+      .burger-icon,
+      .burger-icon::before,
+      .burger-icon::after {
+        width: 20px;
+        height: 2px;
+      }
+      .burger-icon::before {
+        top: -6px;
+      }
+      .burger-icon::after {
+        bottom: -6px;
+      }
+
+      /* Cat sticker and robot adjustments for small screens */
+      #catSticker {
+        font-size: 3rem;
+        bottom: 80px; /* Adjusted for small screens */
+        right: 15px; 
+      }
+      .floating-btn {
+        width: 60px; /* Smaller button for small screens */
+        height: 60px;
+        bottom: 15px; /* Same bottom as cat sticker */
+        right: 15px; /* Position adjusted for small screens */
+      }
+      .floating-btn img {
+        width: 38px;
+        height: 38px;
+      }
+
+
+      .emoji-item {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-picture {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .profile-name {
+        font-size: 1.6rem;
+      }
+      
+      .slide-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Chatbot specific styles */
+    .chat-container {
+      width: 90%; /* Max width for mobile */
+      max-width: 380px; /* Max width for larger screens */
+      height: 80vh; /* Max height for mobile */
+      max-height: 650px; /* Max height for larger screens */
+      background: #ffffff;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: translate(-50%, -50%) scale(0.95); /* Centered and scaled down initially */
+      opacity: 0;
+      transition: all 0.5s ease;
+      position: fixed;
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      z-index: 1001;
+      visibility: hidden;
+    }
+
+    .chat-container.active {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      background: linear-gradient(135deg, #00c9a7, #0099ff);
+      color: white;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .chat-header img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      margin-right: 12px;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .chat-header .username-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .chat-header .username {
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 0.3px;
+    }
+
+    .chat-header .status {
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      opacity: 0.9;
+    }
+
+    .chat-header .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #00ff00;
+      border-radius: 50%;
+      margin-right: 6px;
+      box-shadow: 0 0 5px #00ff00;
+    }
+
+    .close-btn {
+      background: rgba(255, 255, 255, 0.2);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .close-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: rotate(90deg);
+    }
+
+    .close-btn i {
+      font-size: 18px;
+    }
+
+    .chat-box {
+      flex-grow: 1;
+      padding: 15px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      background: #f0f5ff;
+      background-image: radial-gradient(#e0e7ff 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .message-wrapper {
+      display: flex;
+      margin: 10px 0;
+      max-width: 100%;
+    }
+
+    .message-wrapper.bot-message {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .message-wrapper.user-message {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .profile-pic {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+      align-self: flex-start;
+      flex-shrink: 0;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 12px 16px;
+      border-radius: 18px;
+      font-size: 15px;
+      position: relative;
+      line-height: 1.4;
+      word-wrap: break-word;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .user .message {
+      background: linear-gradient(135deg, #00c9a7, #0099ff);
+      color: white;
+      border-bottom-right-radius: 5px;
+    }
+
+    .bot .message {
+      background: white;
+      color: #333;
+      border-bottom-left-radius: 5px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .timestamp {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 5px;
+      text-align: right;
+      font-style: italic;
+    }
+
+    .bot .timestamp {
+      color: #888;
+    }
+
+    /* Options */
+    .options {
+      padding: 12px 15px 15px;
+      background: #f7f7f7;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px; /* Mengurangi jarak antar tombol */
+      border-top: 1px solid #e0e0e0;
+      justify-content: center; /* Memusatkan tombol */
+    }
+
+    .options button {
+      /* Flex-basis disesuaikan untuk 3-4 kolom */
+      flex: 1 1 calc(33.33% - 8px); /* 3 tombol per baris */
+      min-width: 100px; /* Minimum width untuk tombol */
+      max-width: 140px; /* Maksimum width untuk tombol */
+      padding: 8px 12px; /* Padding lebih kecil */
+      font-size: 13px; /* Ukuran font lebih kecil */
+      color: white;
+      border: none;
+      border-radius: 20px; /* Radius lebih kecil */
+      background: linear-gradient(135deg, #00c9a7, #0099ff);
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Shadow lebih kecil */
+      font-weight: 600;
+      white-space: nowrap; /* Mencegah teks terpecah */
+      text-overflow: ellipsis; /* Menambahkan elipsis jika terlalu panjang */
+      overflow: hidden; /* Menghentikan overflow teks */
+    }
+
+    .options button:hover {
+      transform: translateY(-2px); /* Gerakan hover lebih kecil */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .options button:active {
+      background: linear-gradient(135deg, #00b89a, #0088e0);
+      transform: translateY(0);
+    }
+
+    /* Manual Input */
+    .manual-input {
+      display: none; /* Default hidden */
+      padding: 15px;
+      background: #f7f7f7;
+      border-top: 1px solid #e0e0e0;
+      gap: 10px;
+      transition: all 0.3s ease-in-out; /* Add transition for appearance */
+    }
+
+    .manual-input.active {
+        display: flex; /* Show when active */
+    }
+
+    .manual-input input {
+      flex: 1;
+      padding: 12px 18px;
+      border: 1px solid #ddd;
+      border-radius: 25px;
+      font-size: 15px;
+      outline: none;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+
+    .manual-input input:focus {
+      border-color: #00c9a7;
+      box-shadow: 0 0 0 3px rgba(0, 201, 167, 0.2);
+    }
+
+    .manual-input button {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00c9a7, #0099ff);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      transition: all 0.3s;
+    }
+
+    .manual-input button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    }
+
+    .manual-input button:active {
+      transform: translateY(0);
+    }
+
+    /* Typing animation */
+    .typing-indicator {
+      display: inline-flex;
+      align-items: flex-end;
+      margin-left: 5px;
+      min-height: 14px;
+    }
+
+    .typing-indicator span {
+      width: 7px;
+      height: 7px;
+      margin: 0 3px;
+      background-color: #888;
+      border-radius: 50%;
+      opacity: 0;
+      animation: typing 1s infinite ease-in-out;
+    }
+
+    .typing-indicator span:nth-child(1) {
+      animation-delay: 0s;
+    }
+    .typing-indicator span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .typing-indicator span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes typing {
+      0% {
+        opacity: 0;
+        transform: translateY(0px);
+      }
+      20% {
+        opacity: 1;
+        transform: translateY(-4px);
+      }
+      40% {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(0px);
+      }
+    }
+
+    /* Feedback Button in chat (now for email) */
+    .feedback-button {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #DB4437, #C32828); /* Gmail red */
+        color: white;
+        padding: 10px 15px;
+        border-radius: 25px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 10px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        transition: all 0.3s;
+        font-weight: 500;
+        width: fit-content;
+    }
+    .feedback-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    }
+    .feedback-button .icon {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+
+    /* Pop-up Overlay (for feedback) */
+    .feedback-overlay { /* Renamed from .overlay to avoid conflict */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .feedback-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .feedback-popup {
+      background: linear-gradient(135deg, #00c9a7, #0099ff);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      width: 320px;
+      text-align: center;
+      color: white;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .feedback-overlay.active .feedback-popup {
+      transform: scale(1);
+    }
+
+    .feedback-popup h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .feedback-popup textarea {
+      width: calc(100% - 20px);
+      height: 120px;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 10px;
+      resize: vertical;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 15px;
+      outline: none;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .feedback-popup .buttons {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .feedback-popup button {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .feedback-popup button.send-btn {
+      background-color: #25D366; /* Tetap hijau untuk "Kirim" meskipun email */
+      color: white;
+    }
+    .feedback-popup button.send-btn:hover {
+      background-color: #128C7E;
+      transform: translateY(-2px);
+    }
+
+    .feedback-popup button.cancel-btn {
+      background-color: #f44336;
+      color: white;
+    }
+    .feedback-popup button.cancel-btn:hover {
+      background-color: #d32f2f;
+      transform: translateY(-2px);
+    }
+
+    /* Galeri Styles */
+    .gallery-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    .gallery-item {
+      background: var(--light);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid var(--gray);
+    }
+
+    .gallery-item p {
+      padding: 15px;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    /* Galeri Code Pop-up */
+    .gallery-code-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2500; /* Lebih tinggi dari chatbot dan feedback */
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .gallery-code-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .gallery-code-popup {
+        background: linear-gradient(135deg, var(--primary), var(--dark));
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        width: 350px;
+        text-align: center;
+        color: white;
+        transform: scale(0.8);
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+
+    .gallery-code-overlay.active .gallery-code-popup {
+        transform: scale(1);
+    }
+
+    .gallery-code-popup h3 {
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .gallery-code-popup input[type="text"] {
+        width: calc(100% - 30px);
+        padding: 15px;
+        margin-bottom: 25px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        text-align: center;
+        outline: none;
+        box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+        transition: all 0.2s ease;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: var(--dark);
+    }
+
+    .gallery-code-popup input[type="text"]:focus {
+        background-color: var(--white);
+        box-shadow: inset 0 2px 5px rgba(0,0,0,0.2), 0 0 0 3px rgba(255,255,255,0.3);
+    }
+
+    .gallery-code-popup .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .gallery-code-popup button {
+        flex: 1 1 auto;
+        min-width: 120px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        color: var(--white);
+    }
+
+    .gallery-code-popup button.send-btn {
+        background: linear-gradient(45deg, #25D366, #128C7E);
+    }
+    .gallery-code-popup button.send-btn:hover {
+        background: linear-gradient(45deg, #128C7E, #25D366);
+        transform: translateY(-3px);
+    }
+
+    .gallery-code-popup button.cancel-btn {
+        background: linear-gradient(45deg, #f44336, #c62828);
+    }
+    .gallery-code-popup button.cancel-btn:hover {
+        background: linear-gradient(45deg, #c62828, #f44336);
+        transform: translateY(-3px);
+    }
+
+    .gallery-code-popup button.get-access-btn {
+        background: linear-gradient(45deg, #ff9800, #fb8c00);
+    }
+    .gallery-code-popup button.get-access-btn:hover {
+        background: linear-gradient(45deg, #fb8c00, #ff9800);
+        transform: translateY(-3px);
+    }
+
+    /* Adjustments for full screen slides */
+    .slide-gallery-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay" id="menu">
+    <div class="main-container fade-in">
+      <div class="burger-btn" id="burgerBtn" onclick="bukaSlide('info')">
+        <span class="burger-icon"></span>
+      </div>
+
+      <div class="profile-section">
+        <img src="https://i.imgur.com/GUbKAWH.jpg" alt="Foto Profil" class="profile-picture" id="profileImage">
+        <h1 class="profile-name">Amin Fa</h1>
+        <p class="profile-title">Mahasiswa KPI - UIN Salatiga</p>
+        
+        <div class="button-container">
+          <button class="btn" onclick="window.open('https://www.instagram.com/aminnu.s?igsh=dWV0bndhYmt6aDI1')">
+            <i class="fab fa-instagram"></i> Instagram
+          </button>
+          
+          <button class="btn" onclick="window.open('https://www.facebook.com/share/1XPb1Uti5i/')">
+            <i class="fab fa-facebook"></i> Facebook
+          </button>
+          
+          <button class="btn" onclick="window.open('https://notegwe.blogspot.com/2025/05/catatan-interaktif_29.html?m=1')">
+            <i class="fab fa-blogger"></i> My Note
+          </button>
+
+          <button class="btn" onclick="openGalleryCodePopup()">
+            <i class="fas fa-images"></i> My Gallery
+          </button>
+        </div>
+        
+        <div id="quotesSection" class="fade-in">
+          "Jalan terjauh dimulai dari satu langkah kecil yang dijalani dengan tekad besar, karena pada akhirnya, kita tidak dibentuk oleh tujuan yang dicapai, melainkan oleh perjalanan yang kita tempuh untuk mencapainya."
+        </div>
+        
+        <div class="info-frame digital-time" id="digitalClockMenu">
+          <i class="fas fa-clock"></i> <span id="clockText">Loading waktu...</span>
+        </div>
+        
+        <div class="info-frame user-info">
+          <i class="fas fa-user"></i> <span>Welcome to my social media websites  </span>
+        </div>
+
+        <div class="icon-button-container">
+          <div class="icon-btn" onclick="window.open('https://www.facebook.com/share/1XPb1Uti5i/')">
+            <i class="fab fa-facebook-f"></i>
+          </div>
+          
+          <div class="icon-btn" onclick="window.open('https://www.instagram.com/aminnu.s?igsh=dWV0bndhYmt6aDI1')">
+            <i class="fab fa-instagram"></i>
+          </div>
+          
+          <div class="icon-btn" onclick="window.open(WEBSITE_LINK_ANDA)">
+            <i class="fas fa-globe"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="slide" id="info">
+    <div class="slide-header">
+      <h2 class="slide-title">Tentang Saya</h2>
+      <button class="slide-close" onclick="tutupSlide('info')">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="info-content">
+      <div class="tutorial-section">
+        <h3 class="section-title">Tentang Saya</h3>
+        <p class="info-text">
+          Saya adalah seorang mahasiswa jurusan Komunikasi dan Penyiaran Islam (KPI) yang sedang menempuh pendidikan di 
+          institusi UIN Salatiga. Saat ini, saya sedang menjelajahi berbagai hal baru, termasuk membuat website ini 
+          sebagai sarana untuk mengembangkan kemampuan di bidang digital.
+        </p>
+      </div>
+      
+      <div class="tutorial-section">
+        <h3 class="section-title">Hobi Saya</h3>
+        <ul class="info-list">
+          <li><strong>Membaca Novel/Cerpen:</strong> Membaca adalah jembatan ilmu yang membuka wawasan dan pemahaman baru.</li>
+          <li><strong>Menggambar:</strong> Menciptakan karya seni melalui menggambar membantu mengurangi stres akibat tugas kuliah.</li>
+          <li><strong>Meng-hack Game Offline:</strong> Meningkatkan kemampuan teknis untuk menjadi seorang security 
+          expert.</li>
+          <li><strong>Membuat Website Sederhana:</strong> Merupakan hobi baru saya setelah masuk ke dunia digital di perkuliahan.</li>
+        </ul>
+      </div>
+      
+      <div class="tutorial-section">
+        <h3 class="section-title">Tempat Tinggal</h3>
+        <ul class="info-list">
+          <li>Indonesia</li>
+          <li>Provinsi 
+          Jawa Tengah</li>
+          <li>Rumah orang tua di kampung</li>
+          <li>Pondok saat ini di Salatiga</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright-info">
+      <p>© Amieenn_Fa 2025 - All Rights Reserved</p>
+    </div>
+  </div>
+
+  <div class="slide" id="gallerySlide">
+    <div class="slide-header">
+      <h2 class="slide-title">Galeri Saya</h2>
+      <button class="slide-close" onclick="tutupSlide('gallerySlide')">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="slide-gallery-container">
+      <div class="gallery-content" id="galleryContent">
+        </div>
+    </div>
+    <div class="copyright-info">
+      <p>© Amieenn_Fa 2025 - All Rights Reserved</p>
+    </div>
+  </div>
+
+
+  <div id="toast-container"></div>
+
+  <div class="floating-btn" id="floatingBtn">
+    <img src="https://em-content.zobj.net/thumbs/120/apple/354/robot_1f916.png" alt="Robot">
+  </div>
+
+  <div class="chat-container" id="chatContainer">
+    <div class="chat-header">
+      <img src="https://em-content.zobj.net/thumbs/120/apple/354/robot_1f916.png" alt="Robot Profile Picture">
+      <div class="username-info">
+        <div class="username">chatbot gue</div>
+        <div class="status">
+          <span class="status-dot"></span> Online
+        </div>
+      </div>
+      <div class="close-btn" onclick="closeChat()">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+    
+    <div class="chat-box" id="chatBox">
+      </div>
+    
+    <div class="options" id="chatOptions">
+      <button onclick="sendMessage('Siapa kamu?')">Siapa kamu?</button>
+      <button onclick="sendMessage('Apa isi web ini?')">Isi web ini?</button>
+      <button onclick="sendMessage('Punya blog?')">Punya blog?</button>
+      <button onclick="sendMessage('Bagaimana hubungi kamu?')">Kontak admin</button>
+      <button onclick="sendMessage('Kamu suka ngoding?')">Suka ngoding?</button>
+      <button onclick="sendMessage('Warna favoritmu apa?')">Warna favorit?</button>
+      <button onclick="showManualInput()">Ketik Manual</button>
+    </div>
+    
+    <div class="manual-input" id="manualInputContainer">
+      <input type="text" id="userInput" placeholder="Ketik pesan...">
+      <button id="sendManualBtn" onclick="sendManualMessage()">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="feedback-overlay" id="feedbackOverlay">
+    <div class="feedback-popup">
+      <h3>Kirim Kritik & Saran via Email</h3>
+      <textarea id="feedbackText" placeholder="Tulis kritik atau saran Anda di sini..."></textarea>
+      <div class="buttons">
+        <button class="send-btn" onclick="sendFeedback()">Kirim Email</button>
+        <button class="cancel-btn" onclick="hideFeedbackPopup()">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-code-overlay" id="galleryCodeOverlay">
+    <div class="gallery-code-popup">
+      <h3>Masukkan Kode Akses Galeri</h3>
+      <input type="text" id="galleryCodeInput" placeholder="Masukkan kode akses Anda">
+      <div class="buttons">
+        <button class="send-btn" onclick="verifyGalleryCode()">Kirim</button>
+        <button class="cancel-btn" onclick="closeGalleryCodePopup()">Batal</button>
+        <button class="get-access-btn" onclick="requestGalleryAccess()">Dapatkan Akses!</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="catSticker" title="Klik aku!">🐱</div>
+
+  <div id="emojiRainContainer"></div>
+
+  <audio id="catSound" src="https://files.catbox.moe/ug8hf1.mp3" preload="auto"></audio>
+  <audio id="notificationSound" src="media/suara/notifikasi.mp3" preload="auto"></audio>
+
+  <script>
+    // Konfigurasi link website Anda di sini
+    const WEBSITE_LINK_ANDA = 'https://notegwe.blogspot.com/2025/05/catatan-interaktif_29.html?m=1'; 
+
+    // Variabel global
+    let currentToastTimeout = null;
+    let isCatRainActive = false;
+    const catRainCooldown = 5000;
+    const GALLERY_ACCESS_CODE = "AMIN_GUNTUR"; // Kode akses galeri
+    const ADMIN_EMAIL = "uchihafans2@gmail.com"; // Ganti dengan alamat email Anda
+
+    // Fungsi untuk memperbarui jam digital
+    function updateDigitalClock() {
+      const now = new Date();
+      const dateOptions = { 
+        weekday: 'long', 
+        day: 'numeric', 
+        month: 'long', 
+        year: 'numeric' 
+      };
+      const timeOptions = { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        hourCycle: 'h23' 
+      };
+      const dateString = now.toLocaleDateString('id-ID', dateOptions);
+      const timeString = now.toLocaleTimeString('id-ID', timeOptions);
+
+      const fullDateTimeString = `${dateString} | ${timeString}`;
+      if (document.getElementById('clockText')) {
+        document.getElementById('clockText').textContent = fullDateTimeString;
+      }
+    }
+
+    // Fungsi untuk memutar suara notifikasi
+    function playNotificationSound() {
+        const sound = document.getElementById('notificationSound');
+        if (sound) {
+            sound.currentTime = 0; // Reset suara jika sudah diputar
+            sound.play().catch(e => console.error("Error playing notification sound:", e));
+        }
+    }
+
+    // Fungsi untuk menampilkan toast notifikasi
+    function showToast(title, message, duration = 4000) {
+      playNotificationSound(); // Play sound every time toast is shown
+
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'toast-wrapper entering';
+      toast.innerHTML = `
+        <div class="toast-icon">
+          <i class="fas fa-bell" style="font-size: 1.5rem; color: var(--primary);"></i>
+        </div>
+        <div class="toast-content">
+          <strong>${title}</strong>
+          <span>${message}</span>
+        </div>
+      `;
+      // Clear previous toasts to avoid stacking
+      while (container.firstChild) {
+        container.firstChild.remove();
+      }
+      if (currentToastTimeout) {
+        clearTimeout(currentToastTimeout);
+        currentToastTimeout = null;
+      }
+
+      container.appendChild(toast);
+      
+      currentToastTimeout = setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(20px) scale(0.9)';
+        setTimeout(() => {
+          toast.remove();
+          currentToastTimeout = null;
+        }, 300);
+      }, duration);
+    }
+
+    // Fungsi untuk membuka slide
+    function bukaSlide(slideId) {
+      document.querySelectorAll('.slide').forEach(slide => {
+        slide.classList.remove('active');
+        slide.style.display = 'none';
+      });
+      const targetSlide = document.getElementById(slideId);
+      targetSlide.style.display = 'flex';
+      setTimeout(() => {
+        targetSlide.classList.add('active');
+      }, 10);
+      // Sembunyikan tombol burger saat slide terbuka
+      document.getElementById('burgerBtn').style.display = 'none';
+      // Sembunyikan robot dan kucing saat slide terbuka
+      hideFloatingButtons();
+    }
+
+    // Fungsi untuk menutup slide
+    function tutupSlide(slideId) {
+      forceTutupSlide();
+    }
+
+    // Fungsi untuk memaksa menutup slide
+    function forceTutupSlide() {
+      const activeSlide = document.querySelector('.slide.active');
+      if (activeSlide) {
+        activeSlide.classList.remove('active');
+        setTimeout(() => {
+          activeSlide.style.display = 'none';
+          // Tampilkan kembali tombol burger saat slide tertutup
+          document.getElementById('burgerBtn').style.display = 'flex'; 
+          // Tampilkan kembali robot dan kucing saat slide tertutup
+          showFloatingButtons();
+        }, 300);
+      } else {
+        // Pastikan tombol burger selalu terlihat jika tidak ada slide aktif
+        document.getElementById('burgerBtn').style.display = 'flex';
+        showFloatingButtons(); // Ensure they are shown if no slide is active
+      }
+    }
+
+    // Fungsi untuk menyembunyikan robot dan kucing
+    function hideFloatingButtons() {
+        document.getElementById('floatingBtn').style.display = 'none';
+        document.getElementById('catSticker').style.display = 'none';
+    }
+
+    // Fungsi untuk menampilkan robot dan kucing
+    function showFloatingButtons() {
+        // Tampilkan hanya jika chatbot tidak aktif
+        if (!document.getElementById('chatContainer').classList.contains('active')) {
+            document.getElementById('floatingBtn').style.display = 'flex'; // Robot selalu flex
+        }
+        document.getElementById('catSticker').style.display = 'block'; // Kucing selalu block
+    }
+
+
+    // Fungsi untuk memulai hujan stiker kucing
+    function startCatRain() {
+      if (isCatRainActive) {
+        return;
+      }
+
+      isCatRainActive = true;
+      const emojiContainer = document.getElementById('emojiRainContainer');
+      const emojis = ['🐱', '🐈', '🐾', '🎉', '✨', '🌟', '🎈', '👻', '😹', '😻', '😼', '😽', '🙀', '🎊'];
+      const fallDuration = 2500;
+      const numberOfEmojis = 70;
+
+      emojiContainer.innerHTML = '';
+      for (let i = 0; i < numberOfEmojis; i++) {
+        const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+        const item = document.createElement('div');
+        item.classList.add('emoji-item');
+        item.textContent = emoji;
+        item.style.left = `${Math.random() * 100}vw`;
+        item.style.animationDuration = `${fallDuration}ms`;
+        item.style.animationDelay = `${Math.random() * 800}ms`;
+        item.style.setProperty('--fall-x-offset', `${(Math.random() - 0.5) * 200}px`);
+
+        emojiContainer.appendChild(item);
+      }
+
+      setTimeout(() => {
+        emojiContainer.innerHTML = '';
+        setTimeout(() => {
+          isCatRainActive = false;
+        }, catRainCooldown); 
+      }, fallDuration + 500);
+    }
+    
+    // Chatbot specific JavaScript
+    // DOM Elements
+    const floatingBtn = document.getElementById("floatingBtn");
+    const chatContainer = document.getElementById("chatContainer");
+    const chatBox = document.getElementById("chatBox");
+    const userInput = document.getElementById("userInput");
+    const manualInputContainer = document.getElementById("manualInputContainer");
+    const sendManualBtn = document.getElementById("sendManualBtn"); // Get the send button
+    const feedbackOverlay = document.getElementById("feedbackOverlay");
+    const feedbackTextarea = document.getElementById("feedbackText");
+    
+    // Bot responses
+    const responses = {
+      "Siapa kamu?": "Aku adalah versi digital dari Admin, biar kamu makin kenal!",
+      "Apa isi web ini?": "Ini semacam tempat ngumpulin jejak digital dan karya-karyaku.",
+      "Punya blog?": "Ada dong! Coba cek menu atas atau klik bagian blogger 💡",
+      "Bagaimana hubungi kamu?": "Bisa lewat DM IG atau isi form kontak ya 📧",
+      "Kamu suka ngoding?": "Banget. Apalagi ngoding sambil denger musik malam-malam 🎧",
+      "hai": "Halo juga👋😁, kamu apa kabar?",
+      "sehat min?": "Alhamdulillah pol sehat ges😁",
+      "Warna favoritmu apa?": "Ungu! Elegan, tenang, dan agak misterius, kayak aku 😉"
+    };
+    
+    // Initialize chat
+    function initChat() {
+      // Clear previous messages if any
+      chatBox.innerHTML = ''; 
+      // Add welcome message
+      setTimeout(() => {
+        addMessage("Hai! 👋 Aku chatbot pribadi admin. Silahkan pilih pertanyaan di bawah atau klik 'Ketik Manual' untuk bertanya bebas.", "bot");
+      }, 300);
+      // Hide manual input by default on chat open
+      manualInputContainer.classList.remove('active');
+      userInput.value = ''; // Clear input field
+    }
+    
+    // Get current time
+    function getTime() {
+      const now = new Date();
+      const jam = now.getHours().toString().padStart(2, '0');
+      const menit = now.getMinutes().toString().padStart(2, '0');
+      return `${jam}:${menit}`;
+    }
+    
+    // Add message to chat
+    function addMessage(text, type, isTyping = false) {
+      const messageWrapper = document.createElement("div");
+      messageWrapper.className = `message-wrapper ${type}-message`;
+      
+      // Add profile picture for bot messages
+      if (type === "bot" && !isTyping) {
+        const profilePic = document.createElement("img");
+        profilePic.src = "https://em-content.zobj.net/thumbs/120/apple/354/robot_1f916.png";
+        profilePic.alt = "Bot Profile Picture";
+        profilePic.className = "profile-pic";
+        messageWrapper.appendChild(profilePic);
+      }
+      
+      const msg = document.createElement("div");
+      msg.className = `message ${type}`;
+      if (isTyping) {
+        msg.innerHTML = `
+          <div class="typing-indicator">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        `;
+      } else {
+        if (typeof text === 'object' && text.isSpecialButton) {
+          msg.innerHTML = text.content;
+        } else {
+          msg.innerText = text;
+        }
+        
+        const time = document.createElement("div");
+        time.className = "timestamp";
+        time.innerText = getTime();
+        msg.appendChild(time);
+      }
+      
+      messageWrapper.appendChild(msg);
+      chatBox.appendChild(messageWrapper);
+      chatBox.scrollTop = chatBox.scrollHeight;
+      return messageWrapper;
+    }
+    
+    // Send message (from buttons)
+    function sendMessage(text) {
+      addMessage(text, "user");
+      // Show typing indicator
+      const typingMsgWrapper = addMessage("", "bot", true);
+      setTimeout(() => {
+        let reply;
+        if (text === "Kirim kritik saran ke admin" || text === "Kontak admin") { // Changed condition for special button
+          reply = {
+            isSpecialButton: true,
+            content: `
+              Tekan tombol ini untuk mengirim pesan ke admin via email:
+              <div class="feedback-button" onclick="showFeedbackPopup()">
+                <span class="icon">📧</span> Kirim Email Admin
+              </div>
+            `
+          };
+        } else {
+          reply = responses[text] || getUnknownResponse();
+        }
+        
+        // Remove typing indicator
+        chatBox.removeChild(typingMsgWrapper);
+        
+        // Add bot's actual message
+        addMessage(reply, "bot");
+      }, 1500);
+    }
+    
+    // Send manual message (from input)
+    function sendManualMessage() {
+      const text = userInput.value.trim();
+      if (text === "") return;
+      
+      // Add user message
+      addMessage(text, "user");
+      // Clear input
+      userInput.value = "";
+      // Show typing indicator
+      const typingMsgWrapper = addMessage("", "bot", true);
+      setTimeout(() => {
+        let reply;
+        
+        // Check if text matches any predefined responses (case-insensitive)
+        const lowerCaseText = text.toLowerCase();
+        let foundMatch = false;
+        for (const key in responses) {
+            if (lowerCaseText.includes(key.toLowerCase())) {
+                reply = responses[key];
+                foundMatch = true;
+                break;
+            }
+        }
+
+        if (!foundMatch) {
+            // Check for keywords that should trigger the "contact admin" button
+            if (lowerCaseText.includes("kontak") || lowerCaseText.includes("email") || lowerCaseText.includes("hubungi") || lowerCaseText.includes("kritik") || lowerCaseText.includes("saran") || lowerCaseText.includes("admin")) {
+                reply = {
+                    isSpecialButton: true,
+                    content: `
+                        Anda bisa menghubungi admin atau mengirim kritik/saran melalui email:
+                        <div class="feedback-button" onclick="showFeedbackPopup()">
+                            <span class="icon">📧</span> Kirim Email Admin
+                        </div>
+                    `
+                };
+            } else {
+                reply = getUnknownResponse();
+            }
+        }
+        
+        // Remove typing indicator
+        chatBox.removeChild(typingMsgWrapper);
+        
+        // Add bot's actual message
+        addMessage(reply, "bot");
+      }, 1500);
+    }
+    
+    // Response for unknown messages
+    function getUnknownResponse() {
+      return {
+        isSpecialButton: true,
+        content: `
+          Maaf, saya belum bisa memahami pertanyaan Anda.<br><br>
+          Silahkan coba pertanyaan lain atau kirim kritik dan saran ke admin dengan menekan tombol di bawah:
+          <div class="feedback-button" onclick="showFeedbackPopup()">
+            <span class="icon">📧</span> Kirim Email Admin
+          </div>
+        `
+      };
+    }
+    
+    // Feedback functions (modified for email)
+    function showFeedbackPopup() {
+      feedbackOverlay.classList.add("active");
+      feedbackTextarea.value = "";
+      feedbackTextarea.focus();
+    }
+    
+    function hideFeedbackPopup() {
+      feedbackOverlay.classList.remove("active");
+    }
+    
+    function sendFeedback() {
+      const feedbackMessage = feedbackTextarea.value.trim();
+      if (feedbackMessage === "") {
+        showToast('Peringatan!', 'Harap tulis pesan kritik atau saran Anda.', 3000); 
+        return;
+      }
+      
+      const subject = encodeURIComponent("Kritik & Saran dari Chatbot Website Anda");
+      const body = encodeURIComponent(feedbackMessage);
+      const mailtoLink = `mailto:${ADMIN_EMAIL}?subject=${subject}&body=${body}`;
+      
+      window.open(mailtoLink, '_blank');
+      hideFeedbackPopup();
+      showToast('Pesan Terkirim!', 'Pesan kritik/saran Anda telah dikirimkan ke admin melalui email!');
+    }
+
+    // Gallery specific functions
+    function openGalleryCodePopup() {
+        document.getElementById('galleryCodeOverlay').classList.add('active');
+        document.getElementById('galleryCodeInput').value = ''; // Clear previous input
+        document.getElementById('galleryCodeInput').focus();
+        hideFloatingButtons(); // Sembunyikan floating buttons saat pop-up galeri muncul
+    }
+
+    function closeGalleryCodePopup() {
+        document.getElementById('galleryCodeOverlay').classList.remove('active');
+        showFloatingButtons(); // Tampilkan kembali floating buttons saat pop-up galeri ditutup
+    }
+
+    function verifyGalleryCode() {
+        const codeInput = document.getElementById('galleryCodeInput').value.trim();
+        if (codeInput === GALLERY_ACCESS_CODE) {
+            closeGalleryCodePopup();
+            bukaSlide('gallerySlide');
+            showToast('Akses Diterima!', 'Selamat datang di galeri.');
+        } else {
+            showToast('Kode Salah!', 'Maaf, kode salah, silahkan minta akses terlebih dahulu!', 4000);
+        }
+    }
+
+    function requestGalleryAccess() {
+        showToast('Minta Akses Galeri', 'Silahkan chat pribadi di DM Instagram atau Facebook untuk meminta izin.', 5000);
+        // Anda bisa tambahkan link langsung ke IG/FB di sini jika diinginkan
+        // Misalnya: setTimeout(() => window.open('https://www.instagram.com/aminnu.s', '_blank'), 3000);
+    }
+
+    // Function to load gallery images
+    function loadGalleryImages() {
+        const galleryContent = document.getElementById('galleryContent');
+        galleryContent.innerHTML = ''; // Clear existing content
+        const imageCount = 10; // Number of images from gambar1.jpg to gambar10.jpg
+
+        for (let i = 1; i <= imageCount; i++) {
+            const galleryItem = document.createElement('div');
+            galleryItem.classList.add('gallery-item');
+            galleryItem.innerHTML = `
+                <img src="media/gambar/gambar${i}.jpg" alt="Galeri Gambar ${i}">
+                <p>Galeri Gambar ${i}</p>
+            `;
+            galleryContent.appendChild(galleryItem);
+        }
+    }
+    
+    // Open chat when robot button is clicked
+    floatingBtn.addEventListener("click", function() {
+      chatContainer.classList.add("active");
+      hideFloatingButtons(); // Sembunyikan robot (dan kucing) saat chat terbuka
+      initChat();
+    });
+    // Close chat
+    function closeChat() {
+      chatContainer.classList.remove("active");
+      setTimeout(() => {
+        // Tampilkan kembali robot dan kucing HANYA JIKA TIDAK ADA SLIDE AKTIF
+        const anySlideActive = document.querySelector('.slide.active');
+        if (!anySlideActive) {
+            showFloatingButtons();
+        }
+      }, 500); // Wait for transition to complete before showing button
+    }
+    
+    // Enable manual input field and show toasts
+    function showManualInput() {
+        manualInputContainer.classList.add('active'); // Show the manual input field
+        userInput.focus(); // Focus on the input field
+        showToast('Info Chatbot', 'Mohon maaf ini masih dalam perkembangan, maka mungkin jawaban akan kurang memuaskan.', 5000);
+        addMessage('Sekarang kamu bisa bertanya sesuai keinginan kamu.', 'bot');
+    }
+
+    // Allow sending with Enter key for chatbot (only if manual input is active and not for buttons)
+    // Removed the event listener from userInput for keypress enter
+    // userInput.addEventListener("keypress", function(e) {
+    //   if (e.key === "Enter") {
+    //     sendManualMessage();
+    //   }
+    // });
+
+    // Allow sending with Enter key for gallery code
+    document.getElementById('galleryCodeInput').addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        verifyGalleryCode();
+      }
+    });
+
+    // Initialize after page load
+    document.addEventListener('DOMContentLoaded', function() {
+      updateDigitalClock();
+      setInterval(updateDigitalClock, 1000);
+
+      // Tampilkan toast selamat datang
+      setTimeout(() => {
+        showToast('Selamat Datang!', 'Hai, Welcome to my website 👋');
+      }, 1000);
+
+      // Mencegah klik kanan pada gambar profil
+      const profileImage = document.getElementById('profileImage');
+      if (profileImage) {
+        profileImage.addEventListener('contextmenu', function(e) {
+          e.preventDefault(); // Mencegah munculnya menu konteks
+          showToast('Akses Ditolak!', 'Gambar profil tidak dapat disimpan.');
+        });
+      }
+
+      // Logic untuk stiker kucing
+      const catSticker = document.getElementById('catSticker');
+      const catSound = document.getElementById('catSound');
+
+      if (catSticker) {
+        catSticker.addEventListener('click', function() {
+          // Putar suara kucing
+          if (catSound) {
+            catSound.currentTime = 0; 
+            catSound.play().catch(e => console.error("Error playing sound:", e));
+          }
+          // Mulai hujan stiker kucing
+          startCatRain();
+        });
+      }
+
+      // Load gallery images when the page loads (or when the gallery slide is opened for the first time)
+      loadGalleryImages();
+
+      // Ensure floating buttons are shown initially on main menu
+      showFloatingButtons();
+    });
+  </script>
+</body>
+</html>
