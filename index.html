@@ -1934,20 +1934,15 @@
     }
 
     // Function to load gallery images
-    function loadGalleryImages() {
-        const galleryContent = document.getElementById('galleryContent');
-        galleryContent.innerHTML = ''; // Clear existing content
-        const imageCount = 1; // Number of images from gambar1.jpg to gambar10.jpg
-
-        for (let i = 1; i <= imageCount; i++) {
-            const galleryItem = document.createElement('div');
-            galleryItem.classList.add('gallery-item');
-            galleryItem.innerHTML = `
-                <img src="media/gambar/gambar${i}.jpg" alt="Galeri Gambar ${i}">
-                <p>Galeri Gambar ${i}</p>
-            `;
-            galleryContent.appendChild(galleryItem);
-        }
+function loadGalleryImages() {
+    const galleryContent = document.getElementById('galleryContent');
+    galleryContent.innerHTML = `
+        <div class="gallery-item">
+            <img src="media/gambar/gambar1.jpg" alt="Galeri Gambar 1">
+            <p>Galeri Gambar 1</p>
+        </div>
+    `;
+}
     }
     
     // Open chat when robot button is clicked
